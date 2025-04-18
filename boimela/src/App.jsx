@@ -1,5 +1,6 @@
+import Boimela from "./Boimela";
 function App() {
-  return <div className="text-4xl underline text-red-400">Boimela App</div>;
+  return <Boimela />;
 }
 
 export default App;
