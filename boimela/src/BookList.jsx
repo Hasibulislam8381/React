@@ -30,11 +30,11 @@ const BOOKS = [
 function BookList() {
   return (
     <ul>
-      {BOOKS.map((book) => {
+      {BOOKS.map((book) => (
         <li key={book.id}>
           <BookRow book={book} />
-        </li>;
-      })}
+        </li>
+      ))}
     </ul>
   );
 }

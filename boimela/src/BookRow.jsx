@@ -1,12 +1,19 @@
 import BookDetails from "./BookDetails";
 import FeatureBook from "./FeatureBook";
-function BookRow(book) {
+import PropTypes from "prop-types";
+function BookRow({ book }) {
   return (
     <div>
-      <BookDetails />
+      <BookDetails title={book.title} author={book.author} />
       <FeatureBook />
     </div>
   );
 }
+BookRow.propTypes = {
+  book: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+  }),
+};
 
 export default BookRow;
