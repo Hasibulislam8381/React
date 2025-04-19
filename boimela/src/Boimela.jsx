@@ -3,7 +3,7 @@ import Search from "./Search";
 import BookList from "./BookList";
 export default function Boimela() {
   return (
-    <div>
+    <div className="mx-auto p-4">
       <Header />
       <Search />
       <BookList />

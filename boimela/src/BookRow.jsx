@@ -3,10 +3,10 @@ import FeatureBook from "./FeatureBook";
 import PropTypes from "prop-types";
 function BookRow({ book }) {
   return (
-    <div>
+    <>
       <BookDetails title={book.title} author={book.author} />
       <FeatureBook />
-    </div>
+    </>
   );
 }
 BookRow.propTypes = {
