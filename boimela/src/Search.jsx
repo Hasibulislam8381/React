@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 function Search({ searchTerm, onSearchBook }) {
   return (
+    // State practice
+    
     <form>
       <input
         type="text"
