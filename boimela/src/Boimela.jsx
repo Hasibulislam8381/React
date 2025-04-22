@@ -2,6 +2,8 @@ import Header from "./Header";
 import Search from "./Search";
 import BookList from "./BookList";
 import { useState } from "react";
+import { use } from "react";
+import FeatureBook from "./FeatureBook";
 export default function Boimela() {
   const BOOKS = [
     {
@@ -30,13 +32,26 @@ export default function Boimela() {
       featured: false,
     },
   ];
-
+  const [books, setBooks] = useState(BOOKS);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const toggleFeatured = (id) => {
+    setBooks(
+      books.map((book) =>
+        book.id === id ? { ...book, featured: !book.featured } : book
+      )
+    );
+  };
+
   return (
     <div className="mx-auto p-4">
       <Header />
       <Search searchTerm={searchTerm} onSearchBook={setSearchTerm} />
-      <BookList searchTerm={searchTerm} books={BOOKS} />
+      <BookList
+        searchTerm={searchTerm}
+        books={books}
+        onFeatureBook={toggleFeatured}
+      />
     </div>
   );
 }
