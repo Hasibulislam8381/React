@@ -2,6 +2,7 @@ import Header from "./Header";
 import Search from "./Search";
 import CarList from "./CarList";
 import { useState } from "react";
+
 const CARS = [
   {
     id: 1,
@@ -44,14 +45,27 @@ const CARS = [
     isPremium: true,
   },
 ];
+
 function Cars() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [showPremiumOnly, setShowPremiumOnly] = useState(false);
+
+  // Filter the list
+  const filteredCars = CARS.filter((car) => {
+    const matchesPremium = showPremiumOnly ? car.isPremium : true;
+    return matchesPremium;
+  });
 
   return (
     <div className="mx-auto p-4">
       <Header />
-      <Search searchTerm={searchTerm} onSearchCar={setSearchTerm} />
-      <CarList searchTerm={searchTerm} cars={CARS} />
+      <Search
+        searchTerm={searchTerm}
+        onSearchCar={setSearchTerm}
+        showPremiumOnly={showPremiumOnly}
+        onTogglePremium={() => setShowPremiumOnly((prev) => !prev)}
+      />
+      <CarList searchTerm={searchTerm} cars={filteredCars} />
     </div>
   );
 }
