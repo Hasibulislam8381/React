@@ -14,7 +14,15 @@ const Avatar = () => {
 
   return (
     <>
-      <p>Today is : {getDay(today)}</p>;
+      <p
+        style={{
+          backgroundColor: "green",
+          color: "black",
+        }}
+      >
+        Today is : {getDay(today)}
+      </p>
+      ;
       <img height={height} width={width} src={photo} alt={description} />;
     </>
   );
