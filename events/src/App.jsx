@@ -1,7 +1,11 @@
+import Button from "./Button";
+import TextInput from "./TextInput";
+
 function App() {
   return (
-    <div>
-      <h1>Hello</h1>
+    <div className="grid gap-2 items-center p-4 justify-center">
+      <Button />
+      <TextInput />
     </div>
   );
 }
