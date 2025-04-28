@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 function Button({ message, children }) {
-  function handleClick(message) {
+  function handleClick(event, message) {
+    console.log(event.target);
+
     console.log(message);
   }
   return (
     <button
-      onClick={() => handleClick(message)}
+      onClick={(event) => handleClick(event, message)}
       className="bg-purple-700 text-white rounded px-2 py-1 cursor-pointer"
     >
       {children}
