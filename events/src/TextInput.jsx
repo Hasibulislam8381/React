@@ -1,13 +1,13 @@
 function TextInput() {
-  function handleChange() {
-    console.log("Text Change");
+  function handleChange(event) {
+    console.log(event.target.valueAsNumber);
   }
   return (
     <div>
       <input
         className="border-red-700 border-2 rounded-2xl p-2"
         onChange={handleChange}
-        type="text"
+        type="number"
       />
     </div>
   );
