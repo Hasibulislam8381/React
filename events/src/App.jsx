@@ -1,6 +1,7 @@
 import Button from "./Button";
 import CrazyButton from "./CrazyButton";
 import TextInput from "./TextInput";
+import ToolBar from "./ToolBar";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Button />
       <TextInput />
       <CrazyButton />
+      <ToolBar />
     </div>
   );
 }
