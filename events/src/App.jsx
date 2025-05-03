@@ -1,3 +1,4 @@
+import BubbleForm from "./BubbleForm";
 import Button from "./Button";
 import CrazyButton from "./CrazyButton";
 import TextInput from "./TextInput";
@@ -10,6 +11,7 @@ function App() {
       <TextInput />
       <CrazyButton />
       <ToolBar />
+      <BubbleForm />
     </div>
   );
 }
