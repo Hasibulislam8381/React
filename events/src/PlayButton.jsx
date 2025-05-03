@@ -2,8 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function PlayButton({ movieName }) {
+  function handleClick() {
+    console.log(`Playing ${movieName}`);
+  }
   return (
-    <button className="bg-amber-700 mr-2 px-3 py-1 rounded cursor-pointer text-white">
+    <button
+      onClick={handleClick}
+      className="bg-amber-700 mr-2 px-3 py-1 rounded cursor-pointer text-white"
+    >
       Play {movieName}
     </button>
   );
