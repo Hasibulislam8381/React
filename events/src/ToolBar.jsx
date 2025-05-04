@@ -4,7 +4,7 @@ import UploadButton from "./UploadButton";
 
 function ToolBar() {
   return (
-    <div>
+    <div onClick={() => console.log("You clicked on toolbar")}>
       <PlayButton movieName="Tom and Jerry" />
       <UploadButton />
     </div>
