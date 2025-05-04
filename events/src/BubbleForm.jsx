@@ -5,7 +5,7 @@ function BubbleForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(query);
+
     setQuery("");
   }
   return (
