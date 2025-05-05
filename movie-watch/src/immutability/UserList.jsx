@@ -12,12 +12,19 @@ function UserList() {
   ]);
 
   function changeUser(userId, value) {
-    console.log(value);
-
-    const userCopy = [...users];
-    const found = userCopy.find((user) => user.id == userId);
-    found.name = value;
-    setUsers(userCopy);
+    const newUser = [...users];
+    console.log(newUser);
+    const foundRow = newUser.find((user) => user.id == userId);
+    foundRow.name = value;
+    setUsers(newUser);
+  }
+  function addUser() {
+    const newUser = {
+      id: crypto.randomUUID(),
+      name: "Ebrahim",
+      address: "Hakimpur",
+    };
+    setUsers([...users, newUser]);
   }
 
   return (
@@ -26,14 +33,25 @@ function UserList() {
         {users.map((user) => (
           <li key={user.id}>
             <p>
-              {user.name} lives is {user.address}
+              {user.name} lives in {user.address}
             </p>
-            <button onClick={() => changeUser(user.id, "Random")}>
+            <button
+              className="bg-red-500 cursor-pointer hover:bg-red-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+              onClick={() => changeUser(user.id, "Random")}
+            >
+              {" "}
               change
             </button>
           </li>
         ))}
       </ul>
+      <button
+        className="bg-purple-600 cursor-pointer hover:bg-purple-950 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300"
+        onClick={() => addUser()}
+      >
+        {" "}
+        Add new
+      </button>
     </div>
   );
 }
