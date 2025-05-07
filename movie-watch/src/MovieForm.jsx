@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-function MovieForm() {
+function MovieForm({ addMovie }) {
   const [movieData, setMovieData] = useState({
     title: "",
     ott: "",
@@ -16,6 +17,9 @@ function MovieForm() {
   const handleSubmit = (e) => {
     e.preventDefault(movieData);
     console.log(movieData);
+    if (!movieData?.title.trim() || !movieData?.ott.trim()) return;
+    addMovie(movieData);
+    setMovieData({ ...movieData, title: "", value: "" });
   };
 
   return (
@@ -51,4 +55,7 @@ function MovieForm() {
   );
 }
 
+MovieForm.propTypes = {
+  addMovie: PropTypes.func.isRequired,
+};
 export default MovieForm;
