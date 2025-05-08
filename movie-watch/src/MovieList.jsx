@@ -1,18 +1,24 @@
 import PropTypes from "prop-types";
 import React from "react";
-
+import MovieItem from "./MovieItem";
 function MovieList({ movies, rateMovie, toggleWatched, deleteMovie }) {
   return (
     <ul>
-      {movies.map((movie) => (
-        <MovieItem
-          key={movie.id}
-          movie={movie}
-          rateMovie={rateMovie}
-          toggleWatched={toggleWatched}
-          deleteMovie={deleteMovie}
-        />
-      ))}
+      {movies.length === 0 ? (
+        <p className="text-center text-amber-300">
+          No Movies in your watchlist. Add some!
+        </p>
+      ) : (
+        movies.map((movie) => (
+          <MovieItem
+            key={movie.id}
+            movie={movie}
+            rateMovie={rateMovie}
+            toggleWatched={toggleWatched}
+            deleteMovie={deleteMovie}
+          />
+        ))
+      )}
     </ul>
   );
 }
