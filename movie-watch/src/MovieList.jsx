@@ -3,7 +3,7 @@ import React from "react";
 import MovieItem from "./MovieItem";
 function MovieList({ movies, rateMovie, toggleWatched, deleteMovie }) {
   return (
-    <ul>
+    <ul className="mt-3">
       {movies.length === 0 ? (
         <p className="text-center text-amber-300">
           No Movies in your watchlist. Add some!

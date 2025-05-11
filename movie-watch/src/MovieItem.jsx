@@ -7,20 +7,38 @@ function MovieItem({ movie, rateMovie, toggleWatched, deleteMovie }) {
   };
   return (
     <div>
-      <li>
-        <span className="flex justify-between items-center p-3 bg-gray-800 rounded-lg shadow-md">
+      <li className="flex justify-between items-center p-3 bg-gray-800 rounded-lg shadow-md">
+        <span
+          className={`flex-1 mr-2 ${
+            movie.watched ? "line-through text-gray-400" : "text-white"
+          }`}
+        >
           {movie.title} On {movie.ott}
           {movie.rating && `⭐ ${movie.rating}/5`}
         </span>
 
         <div>
-          <ReactStars
-            value={movie?.rating}
-            count={5}
-            size={24}
-            onChange={ratingChange}
-            color2={"#ffd700"}
-          />
+          <div className="flex gap-2">
+            <ReactStars
+              value={movie?.rating}
+              count={5}
+              size={24}
+              onChange={ratingChange}
+              color2={"#ffd700"}
+            />
+            <button
+              onClick={() => toggleWatched(movie.id)}
+              className="px-2 py-1 bg-green-600 text-white rounded cursor-pointer"
+            >
+              {movie.watched ? "Unwatched" : "Watched"}
+            </button>
+            <button
+              onClick={() => deleteMovie(movie.id)}
+              className="px-2 py-1 bg-red-600 text-white rounded cursor-pointer"
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </li>
     </div>
