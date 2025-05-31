@@ -2,26 +2,35 @@ import React from "react";
 import program_1 from "../../assets/program-1.png";
 import program_2 from "../../assets/program-2.png";
 import program_3 from "../../assets/program-3.png";
+import program_icon1 from "../../assets/program-icon-1.png";
+import program_icon2 from "../../assets/program-icon-2.png";
+import program_icon3 from "../../assets/program-icon-3.png";
 
 function Programs() {
-  const programs = [program_1, program_2, program_3];
+  const programs = [
+    { img: program_1, icon: program_icon1, text: "Graduation Degree" },
+    { img: program_2, icon: program_icon2, text: "Postgraduate Program" },
+    { img: program_3, icon: program_icon3, text: "Online Courses" },
+  ];
 
   return (
-    <div className="container mx-auto pt-16 px-4">
+    <div className="container mx-auto px-4 pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {programs.map((img, index) => (
+        {programs.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform"
+            className="relative group bg-white rounded-xl shadow-md overflow-hidden"
           >
-            <img src={img} alt={`program-${index + 1}`} className="w-full" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold mb-2">
-                Program {index + 1}
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Description of Program {index + 1}.
-              </p>
+            <img
+              src={item.img}
+              alt={`program-${index + 1}`}
+              className="w-full"
+            />
+
+            {/* Hover Caption */}
+            <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <img src={item.icon} alt="" className="w-12 h-12 mb-2" />
+              <p className="text-white text-lg font-semibold">{item.text}</p>
             </div>
           </div>
         ))}
