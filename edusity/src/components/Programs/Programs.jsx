@@ -14,7 +14,7 @@ function Programs() {
   ];
 
   return (
-    <div className="container mx-auto px-4 pt-16">
+    <div className="container mx-auto px-4 pt-14 pb-14">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {programs.map((item, index) => (
           <div
@@ -28,9 +28,11 @@ function Programs() {
             />
 
             {/* Hover Caption */}
-            <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <img src={item.icon} alt="" className="w-12 h-12 mb-2" />
-              <p className="text-white text-lg font-semibold">{item.text}</p>
+            <div className="absolute inset-0 bg-black bg-opacity-10 flex flex-col justify-center items-center opacity-0 group-hover:opacity-70 cursor-pointer transition-all duration-300">
+              <div className="transform translate-y-10 group-hover:translate-y-0 transition-transform duration-300 flex flex-col items-center">
+                <img src={item.icon} alt="" className="w-12 h-12 mb-2" />
+                <p className="text-white text-lg font-semibold">{item.text}</p>
+              </div>
             </div>
           </div>
         ))}
