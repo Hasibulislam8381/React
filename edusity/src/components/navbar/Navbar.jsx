@@ -12,7 +12,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`container ${sticky ? "dark-nav" : ""} w-full`}>
+    <nav className={` ${sticky ? "dark-nav" : ""} w-full`}>
       <img src={logo} alt="" className="logo" />
       <ul>
         <li>Home</li>
