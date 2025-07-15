@@ -1,0 +1,25 @@
+/* Swiper navigation arrow styling */
+.custom-swiper-nav .swiper-button-next,
+.custom-swiper-nav .swiper-button-prev {
+  background-color: #2563eb; /* Tailwind's blue-600 */
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px; /* full circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-swiper-nav .swiper-button-next:hover,
+.custom-swiper-nav .swiper-button-prev:hover {
+  background-color: #1d4ed8; /* darker blue on hover */
+}
+
+/* Remove default pseudo-elements if they interfere */
+.custom-swiper-nav .swiper-button-next::after,
+.custom-swiper-nav .swiper-button-prev::after {
+  font-size: 16px;
+}

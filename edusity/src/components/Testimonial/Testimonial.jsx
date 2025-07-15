@@ -55,6 +55,7 @@ const Testimonial = () => {
 
       <div className="relative">
         <Swiper
+          className="custom-swiper-nav"
           modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={30}
           slidesPerView={2}
