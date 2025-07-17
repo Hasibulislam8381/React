@@ -4,7 +4,7 @@ import dark_arrow from "../../assets/dark-arrow.png";
 
 function Hero() {
   return (
-    <div className="hero">
+    <div id="home" className="hero">
       <div className="hero-text">
         <h1>We ensure for a better world</h1>
         <p>

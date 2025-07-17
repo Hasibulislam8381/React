@@ -3,7 +3,7 @@ import about_img from "../../assets/about.png";
 import play_icon from "../../assets/play-icon.png";
 export const About = () => {
   return (
-    <section className="container mx-auto px-4 py-14">
+    <section id="aboutus" className="container mx-auto px-4 py-14">
       <div className="flex flex-col md:flex-row items-center gap-10">
         {/* Left - Image with Play Icon */}
         <div className="relative w-full md:w-2/5">

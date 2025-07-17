@@ -50,7 +50,7 @@ const testimonials = [
 
 const Testimonial = () => {
   return (
-    <div className="container mx-auto px-4 pt-14 pb-14">
+    <div id="testimonial" className="container mx-auto px-4 pt-14 pb-14">
       <Title subtitle="Testimonial" title="What Student Says" />
 
       <div className="relative">

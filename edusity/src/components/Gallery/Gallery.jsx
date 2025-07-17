@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 
 const Gallery = () => {
   return (
-    <div className="container mx-auto px-4 pt-14 pb-14">
+    <div id="campus" className="container mx-auto px-4 pt-14 pb-14">
       <Title subtitle="Gallery" title="Explore Photos Here" />
       <div className="gallery grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <div className="">

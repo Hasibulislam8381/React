@@ -15,7 +15,7 @@ function Programs() {
   ];
 
   return (
-    <div className="container mx-auto px-4 pt-14 pb-14">
+    <div id="programs" className="container mx-auto px-4 pt-14 pb-14 ">
       <Title subtitle="Our Programs" title="What We Offer" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {programs.map((item, index) => (
